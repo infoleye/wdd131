@@ -1,0 +1,105 @@
+:root {
+    
+    --heading-font: "Anton", sans-serif;
+    --body-font: "Roboto", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: 100vh;
+    row-gap: 0; 
+}
+
+/* Layout for larger screens */
+@media (min-width: 768px) {
+    body {
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "main main aside"
+            "footer footer footer";
+        grid-template-columns: 2fr 2fr 1fr;
+}
+
+}
+
+header {
+    grid-area: header;
+    background-color: #3183db;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+
+nav {
+    grid-area: nav;
+    background-color: #030564;
+    padding: 1em;
+    text-align: justify;
+    margin: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 1rem 0.5rem;
+}
+
+main {
+    grid-area: main;
+    padding: 1rem;
+    background-color: #05dc6d;
+    text-align: left;
+    margin: 0; /* Ensure no margin */
+    
+}
+
+aside.right-sidebar {
+    grid-area: aside;
+    padding: 8rem;
+    background-color: #deca91;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    padding: 3rem;
+    text-align: center;
+}
