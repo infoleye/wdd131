@@ -85,7 +85,7 @@ header {
 }
 
  /* subtle hover effect */
-nav a:hover {
+.nav a:hover {
     color: #090700;
     background-color: #d2895e;
     border-radius: 5px;
@@ -97,6 +97,8 @@ main {
     background-color: #b7e8f5f1;
     text-align: left;
     margin: 0; /* Ensure no margin */
+    max-width: 1200px;
+    margin: 0 auto;
 
 }
 
@@ -238,4 +240,12 @@ footer {
     color: white;
     padding: 2rem;
     text-align: center;
+}
+
+#course-title {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
 }
