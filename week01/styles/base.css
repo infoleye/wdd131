@@ -1,0 +1,241 @@
+:root {
+
+    --heading-font: "Anton", sans-serif;
+    --body-font: "Roboto", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: 100vh;
+    row-gap: 0;
+    background-color: #b7e8f5f1;
+        /* same as main background */
+}
+
+/* Layout for larger screens */
+@media (min-width: 768px) {
+    body {
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "main main aside"
+            "footer footer footer";
+        grid-template-columns: 2.5fr 2fr 1.5fr;
+        column-gap: 3rem; /* Adds space between columns */
+        
+    }
+
+}
+
+header {
+    grid-area: header;
+    background-color: #3183db;
+    color: white;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    padding: 2em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+    
+
+}
+
+.nav nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #030564;
+    padding: 0.1em;
+    width: 100%;
+}
+
+/* Styling individual links */
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 1rem 0.5rem;
+    font-size: 1.5em;
+    padding: 0.1rem;
+    transition: background-color 0.3s ease;
+    
+}
+
+ /* subtle hover effect */
+nav a:hover {
+    color: #090700;
+    background-color: #d2895e;
+    border-radius: 5px;
+}
+
+main {
+    grid-area: main;
+    padding: 1rem;
+    background-color: #b7e8f5f1;
+    text-align: left;
+    margin: 0; /* Ensure no margin */
+
+}
+
+.card-section {
+    background-color: #ffffff;
+    /* Light background */
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+}
+
+.card-section h1 {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #030564;
+}
+
+.card-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #030564;
+}
+
+.card1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px; /* Optional spacing between image and text */
+    padding: 20px;
+}
+
+.card1 img {
+    order: 2; /* Ensures image is on the right */
+    max-width: 170px;
+    height: auto;
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+.card1 p {
+    flex: 1;
+    order: 1;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.card2 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    /* Optional spacing between image and text */
+    padding: 20px;
+}
+
+.card2 img {
+    order: 1;
+    /* Ensures image is on the right */
+    max-width: 170px;
+    height: auto;
+    border-radius: 8px;
+    /* Optional: rounded corners */
+}
+
+.card2 p {
+    flex: 1;
+    order: 1;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.card2 figcaption {
+    font-weight: bold;
+    color: #030564;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.right-sidebar-section {
+    grid-area: aside; /* Use the named grid area */
+    background-color: #ccb90b;
+    padding: 1rem;
+    color: #030564;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Match card style */
+}
+
+.right-sidebar-section h4 {
+    font-family: var(--body-font);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #030564;
+}
+
+.right-sidebar-section ul {
+    list-style: none;
+    /* Remove default bullets */
+    padding-left: 0;
+}
+
+.right-sidebar-section li {
+    margin-bottom: 1rem;
+    /* Space between items */
+    display: flex;
+    align-items: center;
+}
+
+.right-sidebar-section li::before {
+    content: "❖"; /* Diamond symbol */
+    color: #010119;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+.right-sidebar-section a {
+    text-decoration: none;
+    color: #030564;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.right-sidebar-section a:hover {
+    color: #090700;
+    text-decoration: underline;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
